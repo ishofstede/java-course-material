@@ -3,7 +3,7 @@
 For all these exercises you are strongly encouraged to use JUnit tests to demonstrate their use.
 
 
-## Builder
+## Builder (1)
 
 Package `builder` under the current package contains a class, `ClubMember` that models a sports club membership. 
 You should use the Builder pattern to instantiate objects of this type according to the specifications given above 
@@ -11,6 +11,13 @@ each instance variable declaration. Take special care with the Sports. At least 
 throw an `IllegalStateException`). Also think about how to instantiate addresses within this build process 
 (there are several solutions).
 It is advisable to create (generate) a `toString()` method.
+
+## Builder (2)
+
+Given the `Snp` class in package `section6_design.part2_patterns.builder`. You should implement the Builder pattern as a means to
+instantiate objects of this class. Take care of required versus optional properties. 
+Implement everything within the current package.
+Demonstrate it using a JUnit test method.
 
 ## Filter
 
@@ -31,7 +38,7 @@ For instance, create a composite that filters Male Adult members playing Fitness
 
 You should first implement method `getAllMembers()` to create a list of club members.
 
-## Observer pattern
+## Observer pattern (1)
 
 Sticking to the ClubMember class for a last exercise.
 The `observer` package contains three classes: `ClubRegistration`, `ClubTeams` and `ClubAdmin`.
@@ -44,6 +51,26 @@ ClubAdmin will want to take care of subscription fees (differing between adults,
 
 Large parts of the app have not been implemented yet. It is up to you to do so according to the use case described 
 above, using the Observer Pattern of course.
+
+## Observer pattern (2)
+
+In package `section6_design.part2_patterns.observer` you will find class `Fermenter`. This class models a microbial fermenter
+in a laboratory setting. There are three pieces of peripheral equipment that are able to help the fermenter from reaching
+fatal conditions: a Cooler, a GlucoseInjector and a PhAdjuster. Each of these devices needs to be updated of change in the
+Fermentor state so that they can act before it is too late: the Fermentor needs to have the internal state between these boundaries:
+
+- glucose between 30 and 100 millimolar
+- pH between 4 and 8
+- temperature between 33 and 40 degrees celcius
+
+Of course, as in all Fermentors, Glucose and pH only go down and temperature goes up.
+
+You may add classes, interfaces, enums and change existing code, but you are not allowed to change
+the functionality of `addBase()`, `cool()` and `addGlucose()`. Nor are you allowed to change the essence of
+method `ferment()` - only add a few lines of code if required.
+
+There is a single test method in package `test/java/nl.bioinf.appdesign.c_designpattern` that you can use to test and demonstrate
+your functionality.
 
 ## Strategy
 
@@ -108,8 +135,18 @@ Adding a new way to decorate or style the cake (such as multi-layer, or with spr
 existing code (except to instantiate it)
 
 
+## Singleton
+
+In this exercise you are going to implement a Singleton pattern. The `section6_design.part2_patterns.singleton` 
+package contains a class `Logger` that is supposed to be a Singleton.
+The Logger class is a simple class that logs messages to the console. It has a single method `log(String message)`
+that logs the message to the console. The Logger class should be a Singleton, meaning that there should only be one 
+instance of the Logger class in the entire application. 
+Implement the Logger class as a Singleton in at least two different ways.
+You should also implement a JUnit test to verify that the Logger class is a Singleton.
 
 ## Factory
 
+In this exercise you are going to implement a Factory pattern. 
+The `section6_design.part2_patterns.factory` package contains
 
-## Singleton

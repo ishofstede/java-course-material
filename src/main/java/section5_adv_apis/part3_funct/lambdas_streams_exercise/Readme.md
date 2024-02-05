@@ -34,3 +34,23 @@
 
 You can run the tests in class `LambdasStreamExerciseTest` to verify the correctness of your solution. 
 
+
+4. In package `section5_adv_apis.part3_funct.lambdas_streams_exercise` you will find class `SNPstreams` that contains two method
+   stubs to be implemented.
+ 
+   * Using field `SNP_COLLECTION`, implement method `getDiseaseCandidateSnps`. It should output
+   the SNPs with a minor allele frequency between 0.0001 and 0.1, as CSV formatted String.  
+   Output should be something like this:
+
+        ```
+         100275;A;C;0.00323
+         162889;C;G;8.72E-4
+         676255;G;C;0.0016672
+         667280;A;G;0.00287
+         719876;C;A;0.006649
+        ```
+   * Using field `SNP_DATA`, implement method `getTransversionsTransitions`. It should return a Map.
+   Keys of this Map should be the Strings "transversion" and "transition", and the values of the Map should be
+   lists of SNP objects. "Transitions" are changes between A<->G and C<->T and "transversions"
+   are changes A<->C, G<->T, A<->T and C<->G.
+

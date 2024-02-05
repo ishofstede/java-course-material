@@ -49,3 +49,17 @@ For this lab, you will write a class for representing a sphere. You will also wr
 4.	When the test case passes, you're done.
 
 (Exercise copied from http://cs.umw.edu/~finlayson/class/fall13/cpsc330/labs/14-testing2.html)
+
+### jUnit Exercise 6: Tesst suite
+
+Class `Protein` is a class with two public methods: `setSequence(String sequence)` and
+`getAminoAcidFraction(char aminoAcid)`. Most code has already been implemented.
+
+It is your task to create test cases that cover both methods to ensure test coverage of both
+sunny-day scenarios and boundary cases. All tests should pass when you're finished. Therefore, you may have to adjust
+the existing code to make this happen.
+You should use the following techniques when relevant:  
+
+- Class and/or test case setup code,
+- Parameterized tests,
+- Various test annotations   
