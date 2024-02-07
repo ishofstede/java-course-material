@@ -145,8 +145,15 @@ instance of the Logger class in the entire application.
 Implement the Logger class as a Singleton in at least two different ways.
 You should also implement a JUnit test to verify that the Logger class is a Singleton.
 
+## Adapter
+
+In this exercise you are going to implement an Adapter pattern. The `section6_design.part2_patterns.adapter` package
+contains a class `TemperatureSensor` that is supposed to be an adapter. The `TemperatureSensor` class is a simple class
+that has a method `getTemperature()` that returns the temperature in degrees Celsius. The `TemperatureSensor` class
+should be an adapter that adapts the `TemperatureSensor` class to the `Temperature` interface. The `Temperature` interface
+
 ## Factory
 
-In this exercise you are going to implement a Factory pattern. 
-The `section6_design.part2_patterns.factory` package contains
+In this exercise you are going to implement a Factory pattern mixed with Strategy. 
+The `section6_design.part2_patterns.factory` package contains a Readme that describes the factory pattern assignment.
 

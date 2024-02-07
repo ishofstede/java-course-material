@@ -50,7 +50,7 @@ For this lab, you will write a class for representing a sphere. You will also wr
 
 (Exercise copied from http://cs.umw.edu/~finlayson/class/fall13/cpsc330/labs/14-testing2.html)
 
-### jUnit Exercise 6: Tesst suite
+### jUnit Exercise 6: Test suite
 
 Class `Protein` is a class with two public methods: `setSequence(String sequence)` and
 `getAminoAcidFraction(char aminoAcid)`. Most code has already been implemented.
