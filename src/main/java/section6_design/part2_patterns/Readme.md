@@ -41,7 +41,7 @@ You should first implement method `getAllMembers()` to create a list of club mem
 ## Observer pattern (1)
 
 Sticking to the ClubMember class for a last exercise.
-The `observer` package contains three classes: `ClubRegistration`, `ClubTeams` and `ClubAdmin`.
+The `observer.clubs` package contains three classes: `ClubRegistration`, `ClubTeams` and `ClubAdmin`.
 ClubRegistration is the place where new members are registered and unsubscribed, through methods 
 `register(ClubMember newMember)` en `unsubscribe(ClubMember leavingMember)`.
 Two classes are interested in these events: ClubTeams en ClubAdmin.
@@ -54,7 +54,7 @@ above, using the Observer Pattern of course.
 
 ## Observer pattern (2)
 
-In package `section6_design.part2_patterns.observer` you will find class `Fermenter`. This class models a microbial fermenter
+In package `section6_design.part2_patterns.observer.fermenter` you will find class `Fermenter`. This class models a microbial fermenter
 in a laboratory setting. There are three pieces of peripheral equipment that are able to help the fermenter from reaching
 fatal conditions: a Cooler, a GlucoseInjector and a PhAdjuster. Each of these devices needs to be updated of change in the
 Fermentor state so that they can act before it is too late: the Fermentor needs to have the internal state between these boundaries:
@@ -69,8 +69,7 @@ You may add classes, interfaces, enums and change existing code, but you are not
 the functionality of `addBase()`, `cool()` and `addGlucose()`. Nor are you allowed to change the essence of
 method `ferment()` - only add a few lines of code if required.
 
-There is a single test method in package `test/java/nl.bioinf.appdesign.c_designpattern` that you can use to test and demonstrate
-your functionality.
+Use a JUnit test method instead of `main()` to test and demonstrate your functionality.
 
 ## Strategy
 

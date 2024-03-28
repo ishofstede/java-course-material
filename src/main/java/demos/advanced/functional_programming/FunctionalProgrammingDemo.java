@@ -11,9 +11,6 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import section5_adv_apis.part3_funct.fp_exercise.Address;
-import section5_adv_apis.part3_funct.fp_exercise.User;
-
 import static java.lang.System.*;
 
 /**

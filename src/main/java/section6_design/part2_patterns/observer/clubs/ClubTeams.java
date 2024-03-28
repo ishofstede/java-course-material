@@ -1,4 +1,4 @@
-package section6_design.part2_patterns.observer;
+package section6_design.part2_patterns.observer.clubs;
 
 import section6_design.part2_patterns.builder.Sport;
 
