@@ -23,7 +23,8 @@ In the current package four classes are already present: `Student`, `Course`, `S
 - Finally, class `StudentAdminDataReader` contains the demos file reader functionality. Note the use of a dedicated interface to abstract away all common code in this class. Here, you will need to do some work as well.
     
 **It is your task to implement all necessary code to support the public API correctly, using the correct collection types.**
-You will need to implement a few methods in these three classes in order to achieve this.
+You will need to implement a few methods in these three classes in order to achieve this. Study all classes first.
+Next, it is advisable to start with the data reader, and processing the data from there. 
 
 I suggest these series of steps (although other routes are possible):
 
