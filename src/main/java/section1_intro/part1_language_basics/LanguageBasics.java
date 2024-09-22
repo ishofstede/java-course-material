@@ -10,8 +10,11 @@ public class LanguageBasics {
      * @return multiple
      */
     public boolean isMultiple(int x, int y) {
-        return true;
-    }
+        if ( x % y == 0){
+            return true;
+        }
+    return false;
+}
 
     /**
      * This method should return the travelled distance (in meters) for the given speed (km/h) and
@@ -22,7 +25,9 @@ public class LanguageBasics {
      * @return
      */
     public double getDistanceInMeters(double speedInKmPerHour, double elapsedTimeInMinutes) {
-        return 0;
+        double speedInMeterPerMinute = (speedInKmPerHour * 1000) / 60;
+        double distanceInMeters = speedInMeterPerMinute * elapsedTimeInMinutes;
+        return distanceInMeters;
     }
 
     /**
@@ -35,12 +40,18 @@ public class LanguageBasics {
      */
     public int getCumulativeSum(int n) {
         //WHAT VALUE DOES i NEED TO HAVE AT THE START?
+        int cumilativeSum = 0;
         //for sure not Integer.MAX_VALUE
-        for (int i = Integer.MAX_VALUE; i < n; i++) {
+
+        //loop from 1 to and including n
+        for (int i = 1; i < n; i++) {
             //YOUR CODE HERE
+            cumilativeSum += i;
 
         }
-        return 0;
+        // After loop, add value of n
+        cumilativeSum += n;
+        return cumilativeSum;
     }
 
     /**
@@ -51,8 +62,9 @@ public class LanguageBasics {
      * @return number^absolute(powerUp)
      */
     public double getTheAbsolutePower(int number, int powerUp) {
+        powerUp = Math.abs(powerUp);
         //YOUR CODE HERE
-        return 0;
+        return Math.pow(number, powerUp);
     }
 
     /**
@@ -68,7 +80,7 @@ public class LanguageBasics {
         String Name_Of_King = "Franz II";
 
         //return the correct variable
-        return null;
+        return nameOfKing;
     }
 
     public String returnCorrectlyNamedVariable_2() {
@@ -78,7 +90,7 @@ public class LanguageBasics {
         String scoreBoard = "D";
 
         //return the correct variable
-        return null;
+        return scoreBoard;
     }
 
     public String returnCorrectlyNamedVariable_3() {
@@ -88,7 +100,7 @@ public class LanguageBasics {
         String DNA_translator = "D";
 
         //return the correct variable
-        return null;
+        return dnaTranslator;
     }
 
 }

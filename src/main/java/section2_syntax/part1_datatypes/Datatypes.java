@@ -32,32 +32,32 @@ public class Datatypes {
     String correctDataType1() {
         //USAGE: the age of the universe in whole years. Change the return value -null- to a correct value
         //- the name of the data type that is correct here
-        return null;
+        return "long";
     }
 
     String correctDataType2() {
         //USAGE: the turnover of ATP in a cell, in Molar per minute
-        return null;
+        return "float";
     }
 
     String correctDataType3() {
         //USAßGE: the molecular weight of a protein, in Daltons
-        return null;
+        return "float";
     }
 
     String correctDataType4() {
         //USAGE: the alive/death status of a test animal
-        return null;
+        return "boolean";
     }
 
     String correctDataType5() {
         //USAGE: the name of an app user
-        return null;
+        return "String";
     }
 
     String correctDataType6() {
         //USAGE: encoding of human gender (Male, Female, Undefined)
-        return null;
+        return "char";
     }
 
     /* NEW SECTION OF ASSIGNMENTS */
@@ -70,16 +70,21 @@ public class Datatypes {
      * Only then the test with the same name will pass (in class DatatypesTest)
      */
     double determineGCfraction(String theDNA) {
-//        int gcCount;
-//        for (int i = 0; i < theDNA.length(); i++) {
-//            char nucleotide = theDNA.charAt(i);
-//            if (nucleotide == 'C' || nucleotide == 'G') {
-//                gcCount++;
-//            }
-//        }
-//        double fraction = gcCount/theDNA.length();
-        return 0;
+        int gcCount = 0;  // Initialize gcCount to 0
+        theDNA = theDNA.toUpperCase();  // Convert theDNA to uppercase for case-insensitive comparison
+
+        for (int i = 0; i < theDNA.length(); i++) {
+            char nucleotide = theDNA.charAt(i);
+            if (nucleotide == 'C' || nucleotide == 'G') {
+                gcCount++;  // Increment gcCount if nucleotide is C or G
+            }
+        }
+
+        // Convert gcCount or length to double for floating-point division
+        double fraction = (double) gcCount / theDNA.length();
+        return fraction;  // Return the calculated GC fraction
     }
+
 
     /**
      * The method below creates a string and calls another method -replaceWord()- to change it.
@@ -89,9 +94,10 @@ public class Datatypes {
      */
     String modifyString() {
         String input = "where can I find the coffeemachine in this building?";
-        replaceWord(input, "coffee", "soda");
+        input = replaceWord(input, "coffee", "soda"); // Capture the modified string
         return input;
     }
+
 
     /**
      * This method is linked to the method above as a single assignment.
@@ -106,8 +112,18 @@ public class Datatypes {
      * For any Java object you can use object.toString() to get this string representation
      */
     String[] getFirstAndLastAsStringRepresentation(Object[] input) {
-        return null;
+        // Create a new String array with length 2
+        String[] result = new String[2];
+
+        // Assign the string representation of the first element to the first slot
+        result[0] = input[0].toString();
+
+        // Assign the string representation of the last element to the second slot
+        result[1] = input[input.length - 1].toString();
+
+        return result;
     }
+
 
     /**
      * This method should return a new int array where all integers from the input have been cubed (power of 3).
@@ -116,12 +132,22 @@ public class Datatypes {
      * @return cubedInput
      */
     int[] cubeAll(int[] input) {
-        int arrayLength = 0; //YOU SHOULD GET THE CORRECT ARRAY LENGTH FIRST
+        // Get the correct array length from the input array
+        int arrayLength = input.length;
+
+        // Create a new array to store the cubed values
+        int[] cubedInput = new int[arrayLength];
+
+        // Iterate through each element of the input array
         for(int i = 0; i < arrayLength; i++) {
-            //YOUR ITERATION CODE HERE
+            // Cube the value and store it in the cubedInput array
+            cubedInput[i] = input[i] * input[i] * input[i];
         }
-        return null;
+
+        // Return the cubed array
+        return cubedInput;
     }
+
 
     /**
      * This method should return the cumulative product of all numbers in the input array.
@@ -129,7 +155,30 @@ public class Datatypes {
      * @return the cumulative product
      */
     int cumulativeProduct(int[] input) {
-        return 0;
+        // Start the cumulative product with 1 (neutral element for multiplication)
+        int product = 1;
+
+        // Loop through the input array
+        for (int i = 0; i < input.length; i++) {
+            product *= input[i]; // Multiply each element with the product
+        }
+
+        // Return the final cumulative product
+        return product;
     }
 
 }
+//
+//    Floating point division: In Java, dividing integers results in integer division (truncates the decimal). To get accurate floating-point results, cast one or both operands to double.
+//
+//        String immutability: Strings in Java are immutable, meaning methods like replace() do not modify the original string but return a new string. You must assign the result to a variable to capture the change.
+//
+//        Floating-point division example: Ensure at least one operand is a double for correct decimal division. For example, double fraction = (double) gcCount / theDNA.length().
+//
+//        Modifying a string with replace: When using replaceWord(input, "coffee", "soda"), reassign the result of replaceWord to modify the original string: input = replaceWord(input, "coffee", "soda");.
+//
+//        Extract first and last element as string representation: Convert array elements to strings using object.toString(), and return a new string array with the first and last elements.
+//
+//        Cube all elements in an array: Use a for-loop to iterate over an array, cube each element (input[i] = input[i] * input[i] * input[i]), and store the result in a new array.
+//
+//        Cumulative product of an array: Initialize a variable to 1, loop through the array multiplying each element by the cumulative product, and return the final product.
