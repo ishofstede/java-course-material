@@ -1,6 +1,7 @@
 package section3_apis.part1_interfaces;
 
 public class CombinerFactory {
+
     /**
      * This method serves a StringCombiner that will surround the given arguments with double quotes,
      * separated by spaces and the result surrounded by single quotes.
@@ -11,8 +12,12 @@ public class CombinerFactory {
      * @return quotedCombiner
      */
     static StringCombiner getQuotedCombiner() {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new StringCombiner() {
+            @Override
+            public String combine(String first, String second) {
+                return "'\"" + first + "\" \"" + second + "\"'";
+            }
+        };
     }
 
     /**
@@ -27,14 +32,20 @@ public class CombinerFactory {
      * @return reversedCombiner
      */
     static StringCombiner getReversedCombiner() {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new StringCombiner() {
+            @Override
+            public String combine(String first, String second) {
+                String firstReversed = new StringBuilder(first).reverse().toString();
+                String secondReversed = new StringBuilder(second).reverse().toString();
+                return first + firstReversed + " " + second + secondReversed;
+            }
+        };
     }
 
     /**
      * <strong>Challenge!</strong>
      * This method serves a StringCombiner that will combine the given arguments so that the characters of both
-     * arguments are converted to their ASCII values and then the summed. These numbers are combined with a space
+     * arguments are converted to their ASCII values and then summed. These numbers are combined with a space
      * in between and returned.
      *
      * For example,
@@ -44,11 +55,16 @@ public class CombinerFactory {
      *
      * Hint: a char IS AN integer behind the scenes
      *
-     * @return reversedCombiner
+     * @return asciiSumCombiner
      */
     static StringCombiner getAsciiSumCombiner() {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new StringCombiner() {
+            @Override
+            public String combine(String first, String second) {
+                int sumFirst = first.chars().sum();
+                int sumSecond = second.chars().sum();
+                return sumFirst + " " + sumSecond;
+            }
+        };
     }
-
 }
