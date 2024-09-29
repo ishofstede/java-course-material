@@ -72,6 +72,15 @@ public class StudentAdminDataReader {
             String[] elements = line.split("\t");
             System.out.println(Arrays.toString(elements));
             //-------------------  YOUR CODE HERE   -------------------//
+            //assign each element to
+            int studentId = Integer.parseInt(elements[0]);
+            String firstName = elements[1];
+            String lastName = elements[2];
+
+            //Create new student instance.
+            Student student = new Student(studentId, firstName, lastName);
+            //add to student admin
+            studentAdmin.getStudents(student);
         }
     }
 
@@ -84,7 +93,12 @@ public class StudentAdminDataReader {
             String[] elements = line.split(";");
             System.out.println(Arrays.toString(elements));
             //-------------------  YOUR CODE HERE   -------------------//
+            String courseId = elements[0];
+            int studentId = Integer.parseInt(elements[1]);
+            int studentGrade = Integer.parseInt(elements[2]);
 
+            Course course = new Course(courseId, studentId, studentGrade);
+            studentAdmin.addGrade(course);
         }
     }
 

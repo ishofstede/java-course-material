@@ -10,6 +10,11 @@ import java.util.Map;
  */
 public class StudentAdmin {
 
+    public void getStudents(Student student) {
+    }
+
+    public void addGrade(Course course){}
+
     /**
      * Returns the students that are present in the database.
      * If the searchString is * (a wildcard), all students will be returned. Else,
@@ -51,4 +56,6 @@ public class StudentAdmin {
         //YOUR CODE HERE (and remove the throw statement)
         throw new UnsupportedOperationException("Not implemented yet");
     }
+
+
 }

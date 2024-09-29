@@ -1,6 +1,6 @@
 package section3_apis.part2_collections;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class FindTheRightCollection {
 
@@ -15,48 +15,49 @@ public class FindTheRightCollection {
      * a collection to store objects to be retrieved by ID.
      */
     Class rightCollection2() {
-        return null;
+        return HashMap.class;
     }
 
     /**
      * a collection to store objects to be accessed by index, but where objects can also be removed efficiently.
      */
     Class rightCollection3() {
-        return null;
+        return LinkedList.class;
     }
 
     /**
      * a collection to store objects supporting fast test for presence.
      */
     Class rightCollection4() {
-        return null;
+        return HashSet.class;
     }
 
     /**
      * an abstract (generic) collection type to store objects in an ordered way supporting accession by index.
      */
     Class rightCollection5() {
-        return null;
+        return List.class;
     }
 
     /**
      * an abstract (generic) collection type supporting fast test for presence.
      */
     Class rightCollection6() {
-        return null;
+        return Set.class;
     }
 
     /**
      * an abstract (generic) collection type supporting retrieval-by-key.
      */
     Class rightCollection7() {
-        return null;
+        return Map.class;
     }
 
     /**
      * a collection to store objects by natural ordering but also supporting fast test for presence.
      */
     Class rightCollection8() {
-        return null;
+        return TreeSet.class;
     }
 }
+
