@@ -1,5 +1,6 @@
 package section3_apis.part2_collections;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,11 +10,22 @@ import java.util.Map;
  * It is your task to implement this logic. Using the right collection type(s).
  */
 public class StudentAdmin {
+    private HashMap<Integer, Student> students = new HashMap<>();
+    private HashMap<String, Course> grades = new HashMap<>();
 
-    public void getStudents(Student student) {
+
+    public void addStudent (Student student) {
+        students.put(student.getStudentId(), student);
     }
 
-    public void addGrade(Course course){}
+    public void addGrade(String courseId, int studentId, int studentGrade) {
+        if (! grades.containsKey(courseId)) {
+            Course course = new Course(courseId);
+            grades.put(courseId, course);
+        }
+        grades.get(courseId).addGrade(studentId, studentGrade);
+
+    }
 
     /**
      * Returns the students that are present in the database.
@@ -24,7 +36,8 @@ public class StudentAdmin {
      */
     public List<Student> getStudents(String searchString) {
         //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");    }
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
 
     /**
      * Returns the grade of a student for the given course

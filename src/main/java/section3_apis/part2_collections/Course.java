@@ -1,5 +1,6 @@
 package section3_apis.part2_collections;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 /**
@@ -8,10 +9,16 @@ import java.util.Objects;
  */
 public class Course {
     private String courseId;
+    private HashMap<Integer, Double> grades = new HashMap<>();
 
     public Course(final String courseId) {
         this.courseId = courseId;
     }
+
+    public void addGrade(double grade, int studentId){
+        grades.put(studentId, grade);
+    }
+
 
     public String getCourseId() {
         return this.courseId;

@@ -80,7 +80,7 @@ public class StudentAdminDataReader {
             //Create new student instance.
             Student student = new Student(studentId, firstName, lastName);
             //add to student admin
-            studentAdmin.getStudents(student);
+            studentAdmin.addStudent(student);
         }
     }
 
@@ -97,8 +97,8 @@ public class StudentAdminDataReader {
             int studentId = Integer.parseInt(elements[1]);
             int studentGrade = Integer.parseInt(elements[2]);
 
-            Course course = new Course(courseId, studentId, studentGrade);
-            studentAdmin.addGrade(course);
+            //Course course = new Course(courseId, //courseId, studentId, studentGrade);
+            studentAdmin.addGrade(courseId, studentId, studentGrade);
         }
     }
 
