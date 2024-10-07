@@ -1,6 +1,8 @@
 package section3_apis.part2_collections;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -42,5 +44,9 @@ public class Course {
     @Override
     public int hashCode() {
         return Objects.hash(this.courseId);
+    }
+
+    public Map<Object, Object> getGrades() {
+        return Collections.unmodifiableMap(this.grades);
     }
 }

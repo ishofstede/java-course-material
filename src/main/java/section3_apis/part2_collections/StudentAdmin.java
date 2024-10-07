@@ -1,8 +1,10 @@
 package section3_apis.part2_collections;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * YOUR CHALLENGE:
@@ -35,8 +37,14 @@ public class StudentAdmin {
      * @return students
      */
     public List<Student> getStudents(String searchString) {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (searchString.equals("*")) {
+            return new ArrayList<>(students.values());
+        }
+
+        return students.values().stream()
+                .filter(s -> s.getFirstName().toLowerCase().contains(searchString.toLowerCase())
+                        || s.getLastName().toLowerCase().contains(searchString.toLowerCase()))
+                .collect(Collectors.toList());
     }
 
     /**
@@ -46,8 +54,11 @@ public class StudentAdmin {
      * @return grade
      */
     public double getGrade(Student student, Course course) {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        Course courseData = grades.get(course.getCourseId());
+        if (courseData != null && courseData.getGrades().containsKey(student.getStudentId())) {
+            return courseData.getGrades().get(student.getStudentId());
+        }
+        return -1;  // Default value if no grade found
     }
 
     /**
@@ -56,8 +67,15 @@ public class StudentAdmin {
      * @return grades
      */
     public Map<String, Double> getGradesForStudent(Student student) {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        Map<String, Double> studentGrades = new HashMap<>();
+        for (Map.Entry<String, Course> entry : grades.entrySet()) {
+            String courseId = entry.getKey();
+            Course course = entry.getValue();
+            if (course.getGrades().containsKey(student.getStudentId())) {
+                studentGrades.put(courseId, (Double) course.getGrades().get(student.getStudentId()));
+            }
+        }
+        return studentGrades;
     }
 
     /**
@@ -66,9 +84,15 @@ public class StudentAdmin {
      * @return grades
      */
     public Map<Student, Double> getGradesForCourse(Course course) {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        Map<Student, Double> courseGrades = new HashMap<>();
+        Course courseData = grades.get(course.getCourseId());
+        if (courseData != null) {
+            courseData.getGrades().forEach((key, value) -> {
+                Student student = students.get(key);
+                courseGrades.put(student, (Double) value);
+            });
+        }
+        return courseGrades;
     }
-
 
 }
