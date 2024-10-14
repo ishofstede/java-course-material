@@ -47,7 +47,8 @@ public class Protein implements Comparable<Protein> {
     @Override
     public int compareTo(Protein other) {
         //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        int score = this.name.compareTo(other.name);
+        return score;
     }
     
     /**
